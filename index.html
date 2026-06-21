@@ -105,26 +105,18 @@
             color: #fff;
             cursor: pointer;
         }
+
+        /* ===== RESPONSIVO - MOBILE SEM MENU ===== */
         @media (max-width: 768px) {
             .header .container {
-                flex-wrap: wrap;
+                justify-content: center;
             }
-            .nav ul {
-                flex-direction: column;
-                background: #111;
-                padding: 1rem;
-                gap: 0.5rem;
-                display: none;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 100%;
+            .nav ul,
+            .nav-toggle {
+                display: none !important;
             }
             .nav ul.open {
-                display: flex;
-            }
-            .nav-toggle {
-                display: block;
+                display: none !important;
             }
         }
 
@@ -484,7 +476,7 @@
             color: #D9CB30;
         }
 
-        /* ===== RESPONSIVO ===== */
+        /* ===== RESPONSIVO GERAL ===== */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.8rem;
@@ -503,27 +495,6 @@
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
-            .header .container {
-                flex-wrap: wrap;
-            }
-            .nav-toggle {
-                display: block;
-                margin-left: auto;
-            }
-            .nav ul {
-                flex-direction: column;
-                background: #111;
-                padding: 1rem;
-                gap: 0.5rem;
-                display: none;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 100%;
-            }
-            .nav ul.open {
-                display: flex;
-            }
         }
         @media (max-width: 480px) {
             .hero h1 {
@@ -538,10 +509,9 @@
 </head>
 <body>
 
-    <!-- ===== HEADER sem logo ===== -->
+    <!-- ===== HEADER ===== -->
     <header class="header">
         <div class="container">
-            <!-- A div .logo foi removida conforme solicitado -->
             <nav class="nav">
                 <ul>
                     <li><a href="#home">Início</a></li>
@@ -848,10 +818,10 @@
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80,
+                    "value": 60,          // menos partículas (era 80)
                     "density": {
                         "enable": true,
-                        "value_area": 1000
+                        "value_area": 800
                     }
                 },
                 "color": {
@@ -865,14 +835,14 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.4,
-                    "random": false,
+                    "value": 0.3,         // mais transparente
+                    "random": true,
                     "anim": {
                         "enable": false
                     }
                 },
                 "size": {
-                    "value": 2.5,
+                    "value": 2,           // menores (era 2.5)
                     "random": true,
                     "anim": {
                         "enable": false
@@ -880,14 +850,14 @@
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 150,
+                    "distance": 120,       // conexões mais curtas
                     "color": "#ffffff",
-                    "opacity": 0.15,
-                    "width": 1
+                    "opacity": 0.1,
+                    "width": 0.8
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2,
+                    "speed": 1.5,          // mais lento
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -911,7 +881,7 @@
                 },
                 "modes": {
                     "repulse": {
-                        "distance": 100,
+                        "distance": 80,
                         "duration": 0.4
                     }
                 }
@@ -920,20 +890,11 @@
         });
     </script>
 
-    <!-- Menu mobile -->
+    <!-- Menu mobile (desativado) -->
     <script>
         const toggle = document.querySelector('.nav-toggle');
         const navUl = document.querySelector('.nav ul');
-        if (toggle) {
-            toggle.addEventListener('click', () => {
-                navUl.classList.toggle('open');
-            });
-            document.querySelectorAll('.nav ul li a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) navUl.classList.remove('open');
-                });
-            });
-        }
+        // O menu não será exibido, mas mantido para não quebrar
     </script>
 </body>
 </html>
