@@ -818,7 +818,7 @@
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 60,          // menos partículas (era 80)
+                    "value": 70,           // número equilibrado
                     "density": {
                         "enable": true,
                         "value_area": 800
@@ -835,14 +835,14 @@
                     }
                 },
                 "opacity": {
-                    "value": 0.3,         // mais transparente
-                    "random": true,
+                    "value": 0.7,          // opacidade alta para ficar bem visível
+                    "random": false,
                     "anim": {
                         "enable": false
                     }
                 },
                 "size": {
-                    "value": 2,           // menores (era 2.5)
+                    "value": 2.5,
                     "random": true,
                     "anim": {
                         "enable": false
@@ -850,14 +850,14 @@
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 120,       // conexões mais curtas
+                    "distance": 150,        // distância para conectar partículas
                     "color": "#ffffff",
-                    "opacity": 0.1,
-                    "width": 0.8
+                    "opacity": 0.5,         // opacidade alta das linhas
+                    "width": 1
                 },
                 "move": {
                     "enable": true,
-                    "speed": 1.5,          // mais lento
+                    "speed": 2,
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -881,7 +881,7 @@
                 },
                 "modes": {
                     "repulse": {
-                        "distance": 80,
+                        "distance": 100,
                         "duration": 0.4
                     }
                 }
